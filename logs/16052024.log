@@ -1,0 +1,12 @@
+2024-05-16 12:19:45,149 - INFO - Extrayendo texto de 'Leticia Sandoval_6299020_2024-05-02_12_1_b9046263-00f5-4635-9388-d9aa2f3d0687.pdf'
+2024-05-16 12:19:45,154 - INFO - Obteniendo datos
+2024-05-16 12:20:51,930 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2024-05-16 12:20:51,932 - INFO - Datos obtenidos en 66.77677702903748 segundos
+2024-05-16 12:20:52,068 - INFO - Archivo 'Leticia Sandoval_6299020_2024-05-02_12_1_b9046263-00f5-4635-9388-d9aa2f3d0687.pdf' enviado a EXPORT
+2024-05-16 12:20:52,093 - INFO - Extrayendo texto de 'Leticia Sandoval_6299020_2024-05-02_12_3_83b8df1f-f381-4679-a001-ce980c137f1f.pdf'
+2024-05-16 12:20:52,129 - INFO - Obteniendo datos
+2024-05-16 12:23:36,848 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2024-05-16 12:23:36,849 - INFO - Datos obtenidos en 164.71940445899963 segundos
+2024-05-16 12:23:36,921 - INFO - Archivo 'Leticia Sandoval_6299020_2024-05-02_12_3_83b8df1f-f381-4679-a001-ce980c137f1f.pdf' enviado a EXPORT
+2024-05-16 12:23:36,941 - INFO - Extrayendo texto de 'LUIS FRANCISCO AREVALO GOMEZ_6230012_2024-05-02_9_25_1666bd20-85a4-4e3f-aabe-daa231f50795.pdf'
+2024-05-16 12:23:37,086 - INFO - Obteniendo datos
