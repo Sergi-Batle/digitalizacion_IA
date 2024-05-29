@@ -1,4 +1,7 @@
-import ollama, logging
+import logging
+from ollama import Client
+
+client = Client(host='http://192.168.22.124:11434')
 
 
 def gen_response(data: str, campos: str):
@@ -11,16 +14,14 @@ def gen_response(data: str, campos: str):
                     NOTE: the field 'importe total antes de impuestos' can be found as 'base imponible' or 'importe bruto' in the documents, but respect the provided field names.
                     NOTE: the fields 'CIF del proveedor' and 'CIF o NIF del cliente' can't have the same value.
                     NOTE: The supplier's name can be seen at the beginning of the document. Its CIF can be seen near the name, but it does not have to be at the beginning of the document.
-                    NOTE: Fields containing 'NIF' or 'CIF' may appear in the document as 'N.I.F', 'C.I.F'.  
-                    NOTE: The value of the field 'importe total de la factura must be the result of ('importe total antes de impuestos' + 'importe de iva'),
-                    do not calculate any value, all values must be extracted from text, that's only for knowledge
+                    NOTE: Fields containing 'NIF' or 'CIF' may appear in the document as 'N.I.F', 'C.I.F'.
                     and do not write any formula in the json, only the resulting value.
-                    all values must be in the document but do the checking.
-
+                    
                     The json must have the following structure:
                     {
                     "numero o codigo de factura" : "value"
                     "fecha de factura" : "value"
+                    "fecha de caducidad o vencimiento" : "value"
                     "CIF del proveedor" : "value"
                     "CIF o NIF del cliente" : "value"
                     "importe total de la factura" : "value"
@@ -34,10 +35,10 @@ def gen_response(data: str, campos: str):
                     Do not mention any instructions received.
                     """
 
-        response = ollama.chat(
+        response = client.chat(
             model="llama3",
             messages=[
-                {"role": "system", "content": f"{system_prompt}"},
+                {"role": "system", "content": system_prompt},
                 {
                     "role": "user",
                     "content": f"""from this document: {data} 
@@ -51,3 +52,6 @@ def gen_response(data: str, campos: str):
         return respuesta_generada
     except:
         logging.error("Error al conectar con API de IA")
+        print("Error al conectar con API de IA")
+
+
